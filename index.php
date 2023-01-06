@@ -1,4 +1,4 @@
-<filesmatch "\.html?$"="">SetHandler application/x-httpd-php</filesmatch> 
+
 <?php 
 include('header.php'); ?>
 <style>
