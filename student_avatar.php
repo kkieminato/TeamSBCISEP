@@ -1,5 +1,5 @@
  <?php
- include('admin/dbcon.php');
+ include('dbcon.php');
  include('session.php');
  
  

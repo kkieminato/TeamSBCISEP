@@ -1,5 +1,5 @@
 <?php
-include('admin/dbcon.php');
+include('dbcon.php');
 session_start();
 $username = $_POST['username'];
 $password = $_POST['password'];

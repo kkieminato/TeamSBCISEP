@@ -1,5 +1,5 @@
 <?php
-include('admin/dbcon.php');
+include('dbcon.php');
 
 $id = $_POST['id'];
 $post_id = $_POST['post_id'];

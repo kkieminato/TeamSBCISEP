@@ -1,5 +1,6 @@
-<?php include('header_dashboard.php'); ?>
 <?php include('session.php'); ?>
+<?php include('header_dashboard.php'); ?>
+
 <?php $get_id = $_GET['id']; ?>
 <?php include('student_quiz_link.php'); ?>
 <body id="class_div">

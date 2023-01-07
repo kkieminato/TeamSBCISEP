@@ -1,5 +1,5 @@
 <?php
-include('admin/dbcon.php');
+include('dbcon.php');
 include('session.php');
 $student_id = $_POST['student_id'];
 $my_message = $_POST['my_message'];

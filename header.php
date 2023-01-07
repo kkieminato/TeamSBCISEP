@@ -27,4 +27,4 @@
 		<script src="admin/vendors/jquery-1.9.1.min.js"></script>
         <script src="admin/vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
-<?php include('admin/dbcon.php'); ?>
+<?php include('dbcon.php'); ?>
