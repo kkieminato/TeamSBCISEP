@@ -1,6 +1,5 @@
-<?php include('session.php'); ?>
 <?php include('header_dashboard.php'); ?>
-
+<?php include('session.php'); ?>
     <body id="class_div">
 		<?php include('navbar_teacher.php'); ?>
         <div class="container-fluid">
@@ -155,7 +154,7 @@
 			
 
                 </div>
-							<?php /*  include('teacher_right_sidebar.php')  */?>
+							<?php/*  include('teacher_right_sidebar.php')  */?>
 	
             </div>
 		

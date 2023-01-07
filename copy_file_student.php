@@ -1,5 +1,5 @@
 <?php
-include('dbcon.php');
+include('admin/dbcon.php');
 include('session.php');
 if (isset($_POST['delete_user'])){
 $id=$_POST['selector'];

@@ -1,6 +1,5 @@
-<?php include('session.php'); ?>
 <?php include('header_dashboard.php'); ?>
-
+<?php include('session.php'); ?>
 <?php include('backpack_sidebar.php'); ?>
 <body id="class_div">
 	

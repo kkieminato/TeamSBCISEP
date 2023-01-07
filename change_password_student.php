@@ -1,6 +1,5 @@
-<?php include('session.php'); ?>
 <?php include('header_dashboard.php'); ?>
-
+<?php include('session.php'); ?>
 <?php include('change_password_sidebar_student.php'); ?>
 <body id="class_div">
 

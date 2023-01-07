@@ -1,5 +1,5 @@
 <?php
-include('dbcon.php');
+include('admin/dbcon.php');
 include('session.php');
 if (isset($_POST['share'])){
 $id=$_POST['selector'];
