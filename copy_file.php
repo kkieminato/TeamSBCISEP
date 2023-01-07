@@ -1,6 +1,6 @@
 <?php
 error_reporting(0);
-include('admin/dbcon.php');
+include('dbcon.php');
 include('session.php');
 if (isset($_POST['delete_user'])){
 $id=$_POST['selector'];

@@ -1,5 +1,5 @@
 <?php
-include('admin/dbcon.php');
+include('dbcon.php');
 $get_id = $_POST['id'];
 mysqli_query($conn,"delete from teacher_class  where  teacher_class_id = '$get_id' ")or die(mysqli_error());
 mysqli_query($conn,"delete from teacher_class_student  where  teacher_class_id = '$get_id' ")or die(mysqli_error());

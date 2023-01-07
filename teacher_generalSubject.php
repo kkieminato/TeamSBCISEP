@@ -1,5 +1,6 @@
-<?php include('header_dashboard.php'); ?>
 <?php include('session.php'); ?>
+<?php include('header_dashboard.php'); ?>
+
 
 <?php $get_id = $_GET['id']; ?>
 <?php include('teacher_general_sidebar.php'); ?>

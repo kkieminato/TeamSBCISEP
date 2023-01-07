@@ -8,6 +8,12 @@ var $link;
     public function __construct() {
         ob_start();
   // Get the main settings from the array we just loaded
+
+  $host111 = 'localhost';
+        $db111 = 'id19874902_capstone';
+        $user111 = 'id19874902_root';
+        $pass111 = 'o%_w?zT3lm/gHseJ';
+
         $host = 'localhost';
         $db = 'capstone';
         $user = 'root';

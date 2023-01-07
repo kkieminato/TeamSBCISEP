@@ -1,5 +1,5 @@
 <?php
-include('admin/dbcon.php');
+include('dbcon.php');
 include('session.php');
 $sender_id = $_POST['sender_id'];
 $sender_name = $_POST['name_of_sender'];
