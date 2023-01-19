@@ -23,7 +23,7 @@
         <div class="menu">
 
             <ul class="menu-links">
-                <li class="nav-link ">
+                <li class="nav-link text_start_timer">
                     <a href="dasboard_teacher.php">
                         <i title="Click here to go to list Class"class='bx bx-home-alt icon'></i>
                         <span  class="text nav-text">My Class</span>
@@ -118,7 +118,9 @@
 </nav>
 
 
-<script src="script1.js"></script>
+<script src="script1.js">
+
+</script>
 
 
 

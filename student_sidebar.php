@@ -128,8 +128,8 @@
 		$.jq_easy_session_timeout(
 	 	{	    
 	 		inactivityDialogDuration: 15, 
-		    maxInactivitySeconds: 300, //5 minutes 
-            inactivityLogoutUrl1:'http://localhost/capstone/logout.php',
+		    maxInactivitySeconds: 3, //5 minutes 
+            inactivityLogoutUrl1:'http://localhost/Capstone/logout.php',
 		});
 		}
 

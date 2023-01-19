@@ -15,7 +15,7 @@
             heartbeatCallback: null,
             heartbeatUrl: window.location.href,
             heartRate: 30,
-            inactivityLogoutUrl: 'http://localhost/TestDrive/Capstone/logout.php',
+            inactivityLogoutUrl: 'http://localhost/Capstone/logout.php',
             inactivityDialogDuration: 10,
             localStoragePrefix: null,
             logoutNowButtonText: 'Logout Now',
@@ -445,4 +445,4 @@
             });
         });
     };
-}(jQuery));
+}(jQuery)); 

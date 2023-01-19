@@ -50,8 +50,8 @@
 							$.jGrowl("Meeting Successfully  created", { header: 'Meeting Added' });
 							var delay = 500;
 							setTimeout(function(){ 
-                window.open("video_meeting_script.php <?php echo '?id='.$get_id; ?>", '_blank').focus();
-				window.location = 'teacher_generalSubject.php<?php echo '?id='.$get_id; ?>' 
+              
+				window.location = 'video_meeting_script.php<?php echo '?id='.$get_id; ?>' 
 				
               }, delay);  
 						}

@@ -3,8 +3,8 @@
     <head>
         <title>ISEP-System</title>
 		<meta name="description" content="Learning Management System">
-		<meta name="keywords" content="CHMSC LMS,CHMSCLMS,CHMSC,LMS,CHMSCLMS.COMXA">
-		<meta name="author" content="JOHN KEVIN LORAYNA">
+		<meta name="keywords" content="Isep LMS">
+		<meta name="author" content="ISEP Team">
 		<meta charset="UTF-8">
         <!-- Bootstrap -->
 				<link href="admin/images/favicon.ico" rel="icon" type="image">
@@ -26,5 +26,6 @@
 				<link rel="stylesheet" type="text/css" href="admin/vendors/bootstrap-wysihtml5/src/bootstrap-wysihtml5.css"/>
 		<script src="admin/vendors/jquery-1.9.1.min.js"></script>
         <script src="admin/vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+		<script src='https://www.google.com/recaptcha/api.js'></script>
     </head>
 <?php include('dbcon.php'); ?>

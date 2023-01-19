@@ -1,12 +1,9 @@
-<?php include('session.php'); ?>
 <?php include('header_dashboard.php'); ?>
-
+<?php include('session.php'); ?>
 <?php include('student_sidebar.php'); ?>
 <body id="class_div">
 	
     <section class="home">
-	
-	
 	
         <div class="container-fluid">
             <div class="row-fluid">
@@ -23,8 +20,7 @@
 						$school_year = $school_year_query_row['school_year'];
 						?>
 							<li><a href="#"><b>My Class</b></a><span class="divider">/</span></li>
-							<li><a href="#">School Year: <?php echo $school_year_query_row['school_year']; ?></a><span class="divider">/</span></li>
-							<li><a href="#"> Semester: </a></li>
+							<li><a href="#">School Year: <?php echo $school_year_query_row['school_year']; ?></a></li>
 						</ul>
 						 <!-- end breadcrumb -->
 					 
@@ -88,7 +84,7 @@
                 </div>
 			
             </div>
-		
+		<?php include('footer.php'); ?>
         </div>
 		<?php include('script.php'); ?>
 	</section>

@@ -16,7 +16,7 @@
 					    <!-- breadcrumb -->	
 									<ul class="breadcrumb">
 										<?php
-										$school_year_query = mysqli_query($conn,"select * from school_year order by school_year DESC")or die(mysqli_error());
+										$school_year_query = mysqli_query($conn,"select * from school_year order by school_year DESC")or die(mysqli_error($conn));
 										$school_year_query_row = mysqli_fetch_array($school_year_query);
 										$school_year = $school_year_query_row['school_year'];
 										?>
@@ -37,7 +37,7 @@
 								<?php
 										$query = mysqli_query($conn,"select * FROM quiz_question
 										LEFT JOIN question_type on quiz_question.question_type_id = question_type.question_type_id
-										where quiz_id = '$get_id' and quiz_question_id = '$quiz_question_id'  order by date_added DESC ")or die(mysqli_error());
+										where quiz_id = '$get_id' and quiz_question_id = '$quiz_question_id'  order by date_added DESC ")or die(mysqli_error($conn));
 										$row = mysqli_fetch_array($query);
 								?>
 								
@@ -62,7 +62,7 @@
 
 														<option value="<?php echo $row['question_type_id']; ?>" ><?php echo $row['question_type']; ?></option>
 													<?php
-													$query_question = mysqli_query($conn,"select * from question_type")or die(mysqli_error());
+													$query_question = mysqli_query($conn,"select * from question_type")or die(mysqli_error($conn));
 													while($query_question_row = mysqli_fetch_array($query_question)){
 													?>
 													<option value="<?php echo $query_question_row['question_type_id']; ?>"><?php echo $query_question_row['question_type'];  ?></option>
@@ -76,7 +76,7 @@
 											<div class="controls">			
 										<div id="opt11">
 <?php
-	$sqlz = mysqli_query($conn,"SELECT * FROM answers WHERE q_id = ".$_GET['edit']."");
+	$sqlz = mysqli_query($conn,"SELECT * FROM answer WHERE quiz_id = ".$_GET['quiz_question_id']);
 	while($rowz = mysqli_fetch_array($sqlz)){
 		if($rowz['choice'] == 'A'){
 			$a = $rowz['value'];
@@ -89,14 +89,14 @@
 		}
 	}
 ?>
-	A.)<input type="text" name="ans1" size="60" value="<?php echo $a;?>"><input name="correctm" value="A" <?php if($rowa['correct'] == 'A'){ echo 'checked'; }?> type="radio"><br /><br />
-	B.)<input type="text" name="ans2" size="60" value="<?php echo $b;?>"><input name="correctm" value="B" <?php if($rowa['correct'] == 'B'){ echo 'checked'; }?> type="radio"><br /><br />
-	C.)<input type="text" name="ans3" size="60" value="<?php echo $c;?>"><input name="correctm" value="C" <?php if($rowa['correct'] == 'C'){ echo 'checked'; }?> type="radio"><br /><br />
-	D.)<input type="text" name="ans4" size="60" value="<?php echo $d;?>"><input name="correctm" value="D" <?php if($rowa['correct'] == 'D'){ echo 'checked'; }?> type="radio"><br /><br />
+	A.)<input type="text" name="ans1" size="60" value="<?php echo $a;?>"><input name="correctm" value="A" <?php if($rowz['correct'] == 'A'){ echo 'checked'; }?> type="radio"><br /><br />
+	B.)<input type="text" name="ans2" size="60" value="<?php echo $b;?>"><input name="correctm" value="B" <?php if($rowz['correct'] == 'B'){ echo 'checked'; }?> type="radio"><br /><br />
+	C.)<input type="text" name="ans3" size="60" value="<?php echo $c;?>"><input name="correctm" value="C" <?php if($rowz['correct'] == 'C'){ echo 'checked'; }?> type="radio"><br /><br />
+	D.)<input type="text" name="ans4" size="60" value="<?php echo $d;?>"><input name="correctm" value="D" <?php if($rowz['correct'] == 'D'){ echo 'checked'; }?> type="radio"><br /><br />
 </div>
 <div id="opt12">
-	<input name="correctt" <?php if($row['answer'] == 'True'){ echo 'checked'; }?> value="t" type="radio">True<br /><br />
-	<input name="correctt" <?php if($row['answer'] == 'False'){ echo 'checked'; }?> value="f" type="radio">False<br /><br />
+	<input name="correctt" <?php if($rowz['answer'] == 'True'){ echo 'checked'; }?> value="t" type="radio">True<br /><br />
+	<input name="correctt" <?php if($rowz['answer'] == 'False'){ echo 'checked'; }?> value="f" type="radio">False<br /><br />
 </div>
 											</div>
 										</div>
@@ -128,19 +128,19 @@
 		
 		if ($type  == '2'){
 				mysqli_query($conn,"insert into quiz_question (quiz_id,question_text,date_added,answer,question_type_id) 
-			values('$get_id','$question',NOW(),'".$_POST['correctt']."','$type')")or die(mysqli_error());
+			values('$get_id','$question',NOW(),'".$_POST['correctt']."','$type')")or die(mysqli_error($conn));
 		}else{
 	
 		mysqli_query($conn,"insert into quiz_question (quiz_id,question_text,date_added,answer,question_type_id) 
-		values('$get_id','$question',NOW(),'$answer','$type')")or die(mysqli_error());
-		$query = mysqli_query($conn,"select * from quiz_question order by quiz_question_id DESC LIMIT 1")or die(mysqli_error());
+		values('$get_id','$question',NOW(),'$answer','$type')")or die(mysqli_error($conn));
+		$query = mysqli_query($conn,"select * from quiz_question order by quiz_question_id DESC LIMIT 1")or die(mysqli_error($conn));
 		$row = mysqli_fetch_array($query);
 		$quiz_question_id = $row['quiz_question_id'];
 		
-		mysqli_query($conn,"insert into answer (quiz_question_id,answer_text,choices) values('$quiz_question_id','$ans1','A')")or die(mysqli_error());
-		mysqli_query($conn,"insert into answer (quiz_question_id,answer_text,choices) values('$quiz_question_id','$ans2','B')")or die(mysqli_error());
-		mysqli_query($conn,"insert into answer (quiz_question_id,answer_text,choices) values('$quiz_question_id','$ans3','C')")or die(mysqli_error());
-		mysqli_query($conn,"insert into answer (quiz_question_id,answer_text,choices) values('$quiz_question_id','$ans4','D')")or die(mysqli_error());
+		mysqli_query($conn,"insert into answer (quiz_question_id,answer_text,choices) values('$quiz_question_id','$ans1','A')")or die(mysqli_error($conn));
+		mysqli_query($conn,"insert into answer (quiz_question_id,answer_text,choices) values('$quiz_question_id','$ans2','B')")or die(mysqli_error($conn));
+		mysqli_query($conn,"insert into answer (quiz_question_id,answer_text,choices) values('$quiz_question_id','$ans3','C')")or die(mysqli_error($conn));
+		mysqli_query($conn,"insert into answer (quiz_question_id,answer_text,choices) values('$quiz_question_id','$ans4','D')")or die(mysqli_error($conn));
 		
 		}
 		

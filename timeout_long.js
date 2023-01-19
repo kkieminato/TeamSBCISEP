@@ -1,5 +1,5 @@
 var timer = document.getElementById("timer");
-var duration = 5000; //10 minutes
+var duration = 1000; //10 minutes
 
 setInterval(updateTimer, 1000);
 
