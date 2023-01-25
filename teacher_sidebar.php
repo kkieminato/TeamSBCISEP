@@ -77,6 +77,13 @@
                         <span class="text nav-text">Items</span>
                     </a>
                 </li>
+                
+                <li class="nav-link">
+                    <a href="sms_options_teacher.php">
+                        <i class='bx bx-wallet icon'></i>
+                        <span class="text nav-text">SMS</span>
+                    </a>
+                </li>
 
             </ul>
         </div>

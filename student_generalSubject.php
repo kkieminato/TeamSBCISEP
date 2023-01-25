@@ -35,7 +35,7 @@
                         <!-- block -->
                         <div id="block_bg" class="block">
                             <div class="navbar navbar-inner block-header">
-                                <div id="" class="muted pull-right"><a  target="_blank" href="student_join_script.php <?php echo '?id='.$get_id; ?>"><button class="btn btn-info pull-right">Join the Meeting</button></a>
+                                <div id="" class="muted pull-right"><a href="student_join_script.php<?php echo '?id='.$get_id; ?>"><button class="btn btn-info pull-right" >Join the Meeting</button></a>
 </div>
                             </div>
                             <div class="block-content collapse in">
@@ -45,34 +45,30 @@
                                 <div class="span12">
                               
                                 <?php
-								 $query_announcement = mysqli_query($conn,"select * from teacher_class_announcements
-																	where  teacher_class_id = '$get_id' order by date ASC
-																	")or die(mysqli_error());
-								 while($row = mysqli_fetch_array($query_announcement)){
-								 $id = $row['teacher_class_announcements_id'];
-								 ?>
-											<div class="post"  id="del<?php echo $id; ?>">
-											<h1>Announcements</h1>
-                                            <?php echo $row['content']; ?>
-
-											<p class="pull-right"><strong><i class="icon-calendar"></i> <?php echo $row['date']; ?></strong></p>
-											</div>
-							
-								<?php } ?>
-                              
-                                <?php
                                 $query_post = mysqli_query($conn, "select * from general_post
-																	where   teacher_class_id = '$get_id' order by date ASC
+                                                                    left join teacher on teacher.teacher_id=general_post.teacher_id
+																	where teacher_class_id = '$get_id' order by date ASC
 																	") or die(mysqli_error());
                                 while ($row1 = mysqli_fetch_array($query_post)) {
                                     $id1 = $row1['post_id'];
 
                                 ?>
+ <div class="post" id="del<?php echo $id1; ?>">
+<div class="image-text">
+           
+
+            <div class="text logo-text">
+            <p style="font-size:20px;">
+            <img class="img-circle" style="width:50px; height:50px;" src="admin/<?php echo $row1['location']; ?>">
+                <span class="name"><strong><?php echo $row1['firstname'] ." " . $row1['lastname']; ?></strong></span>
+                <p style="font-size:10px; "><span class="profession">Teacher</span></p></p>
+            </div>
+            <hr>   
+        </div>
                                   
-                                            <div class="post" id="del<?php echo $id1; ?>">
-
-                                                <?php echo $row1['content']; ?>
-
+                                    
+                                       
+        <?php echo $row1['content']; ?>
                                                 <p class="pull-right"><strong><i class="icon-calendar"></i> <?php echo $row1['date']; ?></strong></p>
                                             </div>
 
@@ -110,6 +106,9 @@
 			
 		
         </div>
+        
+        
+	
 		<?php include('script.php'); ?>
 	</section>
     </body>

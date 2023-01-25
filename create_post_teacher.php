@@ -10,6 +10,7 @@
 							<center>
 
 							<form method="post" id="add_post">
+								
 							<input type="hidden" name="teacher_class_id" value="<?php echo $class_row['teacher_class_id']; ?>">			
 				 <input type="hidden" name="teacher_id" value="<?php echo $class_row['teacher_id']; ?>">			
 				 <textarea name="content" id="ckeditor_full"></textarea>

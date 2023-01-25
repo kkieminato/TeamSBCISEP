@@ -1,21 +1,14 @@
 		<!-- Modal -->
         <div id="histories" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 <div class="modal-body">
-										<?php
-											$mission_query = mysqli_query($conn,"select * from content where title  = 'Mission' ")or die(mysqli_error());
-											$mission_row = mysqli_fetch_array($mission_query);
-											
-											
-											echo $mission_row['content'];
 										
-										?>
 										<hr>
 										<?php
 											
-											$vision_query = mysqli_query($conn,"select * from content where title  = 'Vision' ")or die(mysqli_error());
-											$vision_row = mysqli_fetch_array($vision_query);
+											$history_query= mysqli_query($conn,"select * from content where title  = 'History' ")or die(mysqli_error());
+											$history_row = mysqli_fetch_array($history_query);
 											
-											echo $mission_row['content'];
+											echo $history_row['content'];
 										
 										?>
 </div>

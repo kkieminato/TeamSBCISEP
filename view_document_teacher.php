@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div id="<?php echo $id; ?>" class="modal hide fade " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div id="<?php echo $id; ?>modal1" class="modal hide fade " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-header">
 		<button type="button" class="close pull-right" data-dismiss="modal" aria-hidden="true"> &nbsp; x &nbsp;</button>
 		<h3 id="myModalLabel"><?php  echo $row['fname']; ?></h3>

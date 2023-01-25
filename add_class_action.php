@@ -20,6 +20,7 @@ $teacher_id = $teacher_row['teacher_class_id'];
 
 $insert_query = mysqli_query($conn,"select * from student where class_id = '$class_id'")or die(mysqli_error());
 mysqli_query($conn,"insert into sms_notification (teacher_id,teacher_class_id,subject_id) values('$session_id','$teacher_id','$subject_id')")or die(mysqli_error());
+mysqli_query($conn,"insert into sms_due (teacher_id,teacher_class_id,subject_id) values('$session_id','$teacher_id','$subject_id')")or die(mysqli_error());
 while($row = mysqli_fetch_array($insert_query)){
 $id = $row['student_id'];
 mysqli_query($conn,"insert into teacher_class_student (teacher_id,student_id,teacher_class_id) value('$session_id','$id','$teacher_id')")or die(mysqli_error());

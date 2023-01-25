@@ -35,7 +35,7 @@ ob_end_clean();
       apiKey: "53950e0c-068b-4e02-b62e-f298f47c21d7",
 
       containerId: null,
-
+      debug: true,
       micEnabled: true,
       webcamEnabled: true,
       participantCanToggleSelfWebcam: true,
@@ -51,7 +51,7 @@ ob_end_clean();
             removeParticipant: false, // Remove other participant from meeting
             endMeeting: false, // End meeting for all participant
             drawOnWhiteboard: true, // Can Draw on whiteboard
-            toggleWhiteboard: true, // Can toggle whiteboard
+            toggleWhiteboard: false, // Can toggle whiteboard
             toggleRecording: true, // Can toggle recording
           },
 

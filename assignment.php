@@ -10,7 +10,7 @@
         <div class="container-fluid">
             <div class="row-fluid">
 				
-                <div class="span8" id="content">
+                <div class="span9" id="content">
                      <div class="row-fluid">
 					   <!-- breadcrumb -->
 										<?php $class_query = mysqli_query($conn,"select * from teacher_class
@@ -40,7 +40,7 @@
 												<th>Date Upload</th>
 												<th>File Name</th>
 												<th>Description</th>
-												<th></th>
+												<th>Actions</th>
 												</tr>
 										</thead>
 										<tbody>
@@ -55,7 +55,7 @@
 										 <td><?php echo $row['fdatein']; ?></td>
                                          <td><?php  echo $row['fname']; ?></td>
                                          <td><?php echo $row['fdesc']; ?></td>                                      
-                                         <td width="150">
+                                         <td width="200">
 										  <form method="post" action="view_submit_assignment.php<?php echo '?id='.$get_id ?>&<?php echo 'post_id='.$id ?>">
 										
 										 <button data-placement="bottom" title="View Student who submit Assignment" id="<?php echo $id; ?>view" class="btn btn-success"><i class="icon-folder-open-alt icon-large"></i></button>

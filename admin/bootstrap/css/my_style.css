@@ -105,10 +105,10 @@ margin-bottom:0px !important;
     width: 225px !important;
 }
 .post {
-    border: 1px solid;
+	border: 2px solid;
     border-radius: 10px 10px 10px 10px;
     margin-bottom: 32px;
-    padding: 20px;
+    padding: 40px;
 }
 .row-fluid [class*="span"]:nth-child(5) {
     margin-left: 0;

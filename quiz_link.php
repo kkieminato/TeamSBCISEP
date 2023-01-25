@@ -82,6 +82,12 @@
                         <span class="text nav-text">Quiz</span>
                     </a>
                 </li>
+                <li class="nav-link">
+                    <a href="quiz_teacher_progress.php<?php echo '?id='.$get_id; ?>">
+                        <i class='bx bxs-file-archive icon'></i>
+                        <span class="text nav-text">Quiz progress </span>
+                    </a>
+                </li>
 				
             </ul>
         </div>

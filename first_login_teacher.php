@@ -56,7 +56,7 @@ For teacher, personal data includes name, contact number, email address. <br>
 <br>By accepting this terms and conditions, you agree to the terms and conditions in these terms of service. 
 
 <br><br>
-<input type="checkbox" value='1'>I have read and agree to these <a href="#"> Terms and Condition</a>, and understood the <a href="#"> Privacy Policy </b></a>
+<input type="checkbox" required>I have read and agree to these <a href="#"> Terms and Condition</a>, and understood the <a href="#"> Privacy Policy </b></a>
 		<div class="control-group">
                                           <div class="controls">
 												<button name="update" class="btn btn-success"><i class="icon-save icon-large"></i></button>
@@ -66,7 +66,7 @@ For teacher, personal data includes name, contact number, email address. <br>
 </form>
 <?php
 if (isset($_POST['update'])){
-$flogin = $_POST['flogin'];
+$flogin =  1;
 
 mysqli_query($conn,"update teacher set flogin = '$flogin' where teacher_id = '$session_id' ")or die(mysqli_error());
 ?>

@@ -86,7 +86,7 @@
                                          <td width="100px">
 										
 										 
-										 <a  data-placement="bottom" title="View" id="<?php echo $id; ?>view" tabindex="-1" href="#<?php echo $id; ?>" data-toggle="modal"><i class="icon-eye-open icon-large"></i></a>
+										 <a  data-placement="bottom" title="View" id="<?php echo $id; ?>view" tabindex="-1" href="#<?php echo $id; ?>modal1" data-toggle="modal"><i class="icon-eye-open icon-large"></i></a>
 										 <?php include('view_document_teacher.php'); ?>
 
 										 <a  data-placement="bottom" title="Download" id="<?php echo $id; ?>download" href="<?php echo $row['floc']; ?>"><i class="icon-download icon-large"></i></a>

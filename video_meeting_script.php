@@ -42,10 +42,11 @@ include('teacher_general_sidebar.php');
       webcamEnabled: true,
       participantCanToggleSelfWebcam: true,
       participantCanToggleSelfMic: true,
-     
+      whiteboardEnabled: true,
       raiseHandEnabled: true,
       chatEnabled: true,
       screenShareEnabled: true,
+      toggleHLS:true,
       theme: "LIGHT",
 
 
@@ -60,7 +61,9 @@ include('teacher_general_sidebar.php');
             toggleWhiteboard: true, // Can toggle whiteboard
             toggleRecording: true, // Can toggle recording
             canCreatePoll: true,
-            pin: true,
+            pin: true, toggleLivestream: true,
+            
+            
           },
 
           joinScreen: {
@@ -79,6 +82,11 @@ include('teacher_general_sidebar.php');
       "admin/images/ISEPlogo.gif",
     name: "SBC ",
     poweredBy: false,
+  },
+  livestream: {
+    autoStart: true,
+    enabled: true,
+    theme: "DARK", // DARK || LIGHT || DEFAULT
   },
           leftScreen: {
             // visible when redirect on leave not provieded

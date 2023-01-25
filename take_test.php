@@ -29,8 +29,8 @@ if ($count > 0){
             <div class="row-fluid">
                 <div class="span11" id="content">
                      <div class="row-fluid">
-					    <!-- breadcrumb -->
-										<?php $class_query = mysqli_query($conn,"select * from teacher_class
+				  <!-- breadcrumb -->
+				  <?php $class_query = mysqli_query($conn,"select * from teacher_class
 										LEFT JOIN class ON class.class_id = teacher_class.class_id
 										LEFT JOIN subject ON subject.subject_id = teacher_class.subject_id
 										where teacher_class_id = '$get_id'")or die(mysqli_error());
@@ -68,9 +68,9 @@ $x=0;
 											var timer = jQuery("#timer").text();
 											jQuery("#timer").load("timer.ajax.php");	
 											if(timer == 0){
-												jQuery(".questions-table input").hide();
+												jQuery(".questions-table input").show();
 												jQuery("#submit-test").show();
-												jQuery("#msg").text("Time's up!!!\nPlease Submit your Answers");
+												//jQuery("#msg").text("Time's up!!!\nPlease Submit your Answers");
 											} else {
 												jQuery(".questions-table input").show();
 											}
@@ -82,7 +82,7 @@ $x=0;
 										$sqla = mysqli_query($conn,"select * FROM class_quiz 
 										LEFT JOIN quiz ON quiz.quiz_id  = class_quiz.quiz_id
 										where teacher_class_id = '$get_id' 
-										order by date_added DESC ")or die(mysqli_error());
+										order by date_added DESC ")or die(mysqli_error($conn));
 										/* $row = mysqli_fetch_array($sqla); */
 										$rowa = mysqli_fetch_array($sqla);
 					
@@ -193,7 +193,7 @@ if($roww['question_type_id']=='2'){
 	</center>
 	<?php
 	/* echo "Your Percentage Grade is : <b>".$per."%</b>"; */
-	mysqli_query($conn,"UPDATE student_class_quiz SET `student_quiz_time` = 3600, `grade` = '".$score." out of ".($x-1)."' WHERE student_id = '$session_id' and class_quiz_id = '$class_quiz_id'")or die(mysqli_error());
+	mysqli_query($conn,"UPDATE student_class_quiz SET `student_quiz_time` = 3600,`quiz_status`=1, `grade` = '".$score." out of ".($x-1)."' WHERE student_id = '$session_id' and class_quiz_id = '$class_quiz_id'")or die(mysqli_error());
 ?>
 <script>
 	  window.location = 'student_quiz_list.php<?php echo '?id='.$get_id; ?>'; 
@@ -202,28 +202,7 @@ if($roww['question_type_id']=='2'){
 	} /* else { */
 ?>
 <br />
-<?php
-/* $sql = mysqli_query($conn,"SELECT * FROM students WHERE stud_id = '".$_SESSION['user_id']."'");
-$row = mysqli_fetch_array($sql);
-	if(is_null($row['grade']) AND $row['time-left'] == 3600){ */
-?>
-<!--	<a href="?test=ok">Take the test now</a> -->
-<?php
-/* 	} else if(is_null($row['grade']) AND $row['time-left'] < 3600 AND $row['time-left'] > 0){ */
-?>
-<!--	<a href="?test=ok">Continue your test</a> -->
-<?php
-/* 	} else if(!is_null($row['grade'])){
-		$sqlg = mysqli_query($conn,"SELECT * FROM groupcode WHERE course_code = '".$row['course_code']."'");
-		$rowg = mysqli_fetch_array($sqlg);
-		echo "You have already taken <b>".$rowg['course_title']."</b> - <b>".$rowg['course_code']."</b> test.";
-	}
-	if($row['grade']!=''){
-		mysqli_query($conn,"UPDATE students SET `time-left` = 3600 WHERE stud_id = '".$_SESSION['user_id']."'");
-		echo "<br />Your Grade for this Test is :  <b>".$row['grade']."</b>";		
-	}
-} */
-?>
+
                             </div>
                             <div class="block-content collapse in">
                                 <div class="span12">

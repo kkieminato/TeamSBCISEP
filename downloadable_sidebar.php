@@ -4,18 +4,18 @@
         <div id="block_bg" class="block">
             <div class="navbar navbar-inner block-header">
                 <div id="" class="muted pull-right">
-                    <h4><i class="icon-plus-sign"></i> Add Downloadable</h4>
+                    <h4><i class="icon-plus-sign"></i> Upload Downloadable Materials</h4>
                 </div>
             </div>
             <div class="block-content collapse in">
                 <div class="span12">
                     <form class="" id="add_downloadble" method="post" enctype="multipart/form-data" name="upload">
                         <div class="control-group">
-                            <label class="control-label" for="inputEmail">File</label>
+                           
                             <div class="controls">
 
 
-                                <input  name="uploaded_file" class="input-file uniform_on" id="fileInput" type="file" accept=".jpg, .jpeg, .png, .pptx, .ppt, .doc, .docx, .pdf  " required>
+                                <input title="Your File Name" name="uploaded_file" class="input-file uniform_on" id="fileInput" type="file" accept=".jpg, .jpeg, .png, .pptx, .ppt, .doc, .docx, .pdf " required>
 
                                 <input type="hidden" name="MAX_FILE_SIZE" value="1000000" />
                                 <input type="hidden" name="id" value="<?php echo $session_id ?>" />
@@ -86,17 +86,17 @@
 
                                     break;
                                 default:
-                                    $.jGrowl('File is not permitted to Upload');
+                                    $.jGrowl('File is not permitted to Upload You can Only Upload (jpg,ppt,pptx,tif,doc,docx,gif,mp4)');
                                     this.value = '';
                             }
                         };
                         $(document).ready(function() {
-                            maxFileSize=10 * 1024 * 1024;
+                            maxFileSize=200 * 1024 * 1024;
                             $("#fileInput").change(function(){
                                 fileSize=this.files[0].size;
 
                                 if (fileSize > maxFileSize){
-                                    $.jGrowl('You can Only Upload only files under 10MB');
+                                    $.jGrowl('You can Only Upload only files under 200MB');
                                     this.value='';
                                 }
                             });
