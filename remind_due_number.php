@@ -1,5 +1,3 @@
-
-
 <?php include('session.php'); ?>
 <?php include('header_dashboard.php'); ?>
 
